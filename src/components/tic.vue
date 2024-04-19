@@ -1,11 +1,6 @@
 <template>
   <div class="row">
-    <div
-      v-for="(item, index) in arr"
-      :key="index"
-      class="col-4 cell ticContainer text-center"
-      @click="addturn(index)"
-    >
+    <div v-for="(item, index) in arr" :key="index" class="col-4 cell ticContainer text-center" @click="addturn(index)">
       <div>{{ item }}</div>
     </div>
   </div>
@@ -13,38 +8,50 @@
 
 <script setup>
 import { ref, watch } from "vue";
+import { currentUser, setCurrentUser } from '../store/currentUser.js'
 const arr = ref(Array(9).fill(""));
-const currentUser = ref("X");
-const emit = defineEmits(['getTicked'])
+const emit = defineEmits(['getTicked', 'boxId'])
+const win = ref(false)
+// console.log(currentUser.value);
 
-watch(arr.value, (arr) => {
+watch(arr.value, (currarr) => {
   let draw = true;
-  for (let i = 0; i < arr.length; i++) {
-    if (!arr[i]) {
+  for (let i = 0; i < currarr.length; i++) {
+    if (!currarr[i]) {
       draw = false;
       break;
     }
   }
-  if (draw) {
+  if (draw && !win.value) {
     alert("game draw...");
+    const arrreset = Array(9).fill("");
+    console.log(arrreset);
+    arr.value = arrreset;
+    console.log(arr.value);
   }
+
 });
+// console.log(arr.value);
+
+// const { currentUser } = defineProps(['currentUser'])
+// console.log(currentUser);
+
 function addturn(i) {
-  if (arr.value[i] !== "") {
+  // console.log(currentUser);
+  if (arr.value[i] !== "" || win.value) {
     return;
   }
   arr.value[i] = currentUser.value;
-
-  if (currentUser.value == "X") {
-    currentUser.value = "O";
-  } else {
-    currentUser.value = "X";
-  }
+  // console.log("in tick : ", currentUser);
   const result = isWin(arr.value);
+
   if (result) {
     alert(`${result} wins`);
-    return;
+    win.value = true
+    emit('boxId')
+    // return;
   }
+  setCurrentUser()
 
   emit('getTicked', i)
 }
@@ -61,13 +68,7 @@ function isWin(arr) {
     [0, 1, 2],
   ];
   for (const i of winCondition) {
-    console.log(i);
-    console.log(arr[i[0]]);
-    if (
-      arr[i[0]] === arr[i[1]] &&
-      arr[i[0]] === arr[i[2]]
-    ) {
-      console.log("win");
+    if (arr[i[0]] === arr[i[1]] && arr[i[0]] === arr[i[2]] && arr[i[0]]) {
       return arr[i[0]];
     }
   }
