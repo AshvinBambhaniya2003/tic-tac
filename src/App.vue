@@ -122,7 +122,7 @@ function isMainWin(arr) {
 <style scoped>
 .cell {
   height: 70px;
-  border: 1px solid black;
+  border: 1px solid white;
 }
 
 table tr td {
@@ -134,10 +134,10 @@ table tr td {
 }
 
 .adiliti {
-  border-bottom: 1px solid white;
+  border-bottom: 5px solid #7e818b;;
 }
 
 .ubhiliti {
-  border-right: 1px solid white;
+  border-right: 5px solid #acb1c0;
 }
 </style>
