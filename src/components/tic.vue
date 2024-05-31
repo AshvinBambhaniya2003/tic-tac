@@ -7,12 +7,12 @@
 </template>
 
 <script setup>
-import { ref, watch } from "vue";
+import { ref, watch, defineProps } from "vue";
 import { currentUser, setCurrentUser } from '../store/currentUser.js'
+import { activeBox, setActiveBox } from '../store/activeBox.js'
 const arr = ref(Array(9).fill(""));
 const emit = defineEmits(['getTicked', 'boxId'])
 const win = ref(false)
-// console.log(currentUser.value);
 
 watch(arr.value, (currarr) => {
   let draw = true;
@@ -31,29 +31,34 @@ watch(arr.value, (currarr) => {
   }
 
 });
-// console.log(arr.value);
 
-// const { currentUser } = defineProps(['currentUser'])
-// console.log(currentUser);
+const props = defineProps({
+  ticId: String,
+  tickedbox: Number
+})
 
 function addturn(i) {
-  // console.log(currentUser);
-  if (arr.value[i] !== "" || win.value) {
-    return;
-  }
-  arr.value[i] = currentUser.value;
-  // console.log("in tick : ", currentUser);
-  const result = isWin(arr.value);
+  if (activeBox.value == 9 || activeBox.value == props.ticId) {
+    console.log(win.value);
+    if (arr.value[i] !== "" || win.value) {
+      return;
+    }
+    arr.value[i] = currentUser.value;
+    const result = isWin(arr.value);
 
-  if (result) {
-    alert(`${result} wins`);
-    win.value = true
-    emit('boxId')
-    // return;
+    if (result) {
+      alert(`${result} wins`);
+      win.value = true
+      setActiveBox(9)
+      emit('boxId')
+      setCurrentUser()
+      return;
+    }
+    setCurrentUser()
+    setActiveBox(i)
   }
-  setCurrentUser()
 
-  emit('getTicked', i)
+
 }
 
 function isWin(arr) {
