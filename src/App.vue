@@ -19,35 +19,35 @@
             </div>
             <div class="row adiliti">
               <div class="col-4 ubhiliti">
-                <Tic ticId="0" @boxId="addToarrayOfMain(0)" />
+                <Tic ticId="0" />
               </div>
               <div class="col-4 ubhiliti">
-                <Tic ticId="1" @boxId="addToarrayOfMain(1)" />
+                <Tic ticId="1" />
               </div>
               <div class="col-4">
-                <Tic ticId="2" @boxId="addToarrayOfMain(2)" />
+                <Tic ticId="2" />
               </div>
             </div>
             <div class="row adiliti">
               <div class="col-4 ubhiliti">
-                <Tic ticId="3" @boxId="addToarrayOfMain(3)" />
+                <Tic ticId="3" />
               </div>
               <div class="col-4 ubhiliti">
-                <Tic ticId="4" @boxId="addToarrayOfMain(4)" />
+                <Tic ticId="4" />
               </div>
               <div class="col-4">
-                <Tic ticId="5" @boxId="addToarrayOfMain(5)" />
+                <Tic ticId="5" />
               </div>
             </div>
             <div class="row">
               <div class="col-4 ubhiliti">
-                <Tic ticId="6" @boxId="addToarrayOfMain(6)" />
+                <Tic ticId="6" />
               </div>
               <div class="col-4 ubhiliti">
-                <Tic ticId="7" @boxId="addToarrayOfMain(7)" />
+                <Tic ticId="7" />
               </div>
               <div class="col-4">
-                <Tic ticId="8" @boxId="addToarrayOfMain(8)" />
+                <Tic ticId="8" />
               </div>
             </div>
           </table>
@@ -58,50 +58,11 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+
 import Tic from "./components/tic.vue";
 import { currentUser } from './store/currentUser.js'
 import { activeBox } from "./store/activeBox";
-const mainArr = ref(Array(9).fill(""));
-
-
-const addToarrayOfMain = (num) => {
-  if (mainArr.value[num] !== "") {
-    return;
-  }
-  mainArr.value[num] = currentUser.value;
-  const result = isMainWin(mainArr.value);
-
-  console.log(activeBox.value);
-
-  if (result) {
-    console.log("ushfijsbfkhsdb");
-    console.log("main game" + result + "is win");
-    alert(` ${result} wins`);
-
-    window.location.reload()
-  }
-
-}
-
-function isMainWin(arr) {
-  const winCondition = [
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6],
-    [0, 1, 2],
-  ];
-  for (const i of winCondition) {
-    if (arr[i[0]] === arr[i[1]] && arr[i[0]] === arr[i[2]] && arr[i[0]]) {
-      return arr[i[0]];
-    }
-  }
-  return false;
-}
+import { mainArr } from "./store/mainArr";
 
 </script>
 
