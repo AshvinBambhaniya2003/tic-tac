@@ -19,35 +19,35 @@
             </div>
             <div class="row adiliti">
               <div class="col-4 ubhiliti">
-                <Tic ticId="0" />
+                <Tic :ticId="0" />
               </div>
               <div class="col-4 ubhiliti">
-                <Tic ticId="1" />
+                <Tic :ticId="1" />
               </div>
               <div class="col-4">
-                <Tic ticId="2" />
+                <Tic :ticId="2" />
               </div>
             </div>
             <div class="row adiliti">
               <div class="col-4 ubhiliti">
-                <Tic ticId="3" />
+                <Tic :ticId="3" />
               </div>
               <div class="col-4 ubhiliti">
-                <Tic ticId="4" />
+                <Tic :ticId="4" />
               </div>
               <div class="col-4">
-                <Tic ticId="5" />
+                <Tic :ticId="5" />
               </div>
             </div>
             <div class="row">
               <div class="col-4 ubhiliti">
-                <Tic ticId="6" />
+                <Tic :ticId="6" />
               </div>
               <div class="col-4 ubhiliti">
-                <Tic ticId="7" />
+                <Tic :ticId="7" />
               </div>
               <div class="col-4">
-                <Tic ticId="8" />
+                <Tic :ticId="8" />
               </div>
             </div>
           </table>

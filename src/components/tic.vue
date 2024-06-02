@@ -18,8 +18,7 @@ const arr = ref(Array(9).fill(""));
 const win = ref(false)
 
 const props = defineProps({
-  ticId: String,
-  tickedbox: Number
+  ticId: Number,
 })
 
 function addturn(i) {
