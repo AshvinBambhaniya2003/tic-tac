@@ -53,7 +53,7 @@ function addturn(i) {
       setActiveBox(9)
       return
     }
-    setActiveBox(9)
+    setActiveBox(i)
   }
 }
 
