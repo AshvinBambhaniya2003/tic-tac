@@ -19,35 +19,35 @@
             </div>
             <div class="row adiliti">
               <div class="col-4 ubhiliti">
-                <Tic ticId="0" :class="{ backgroundHighlight: activeBox == 9 || activeBox == 0 }" />
+                <Tic ticId="0" />
               </div>
               <div class="col-4 ubhiliti">
-                <Tic ticId="1" :class="{ backgroundHighlight: activeBox == 9 || activeBox == 1 }" />
+                <Tic ticId="1" />
               </div>
               <div class="col-4">
-                <Tic ticId="2" :class="{ backgroundHighlight: activeBox == 9 || activeBox == 2 }" />
+                <Tic ticId="2" />
               </div>
             </div>
             <div class="row adiliti">
               <div class="col-4 ubhiliti">
-                <Tic ticId="3" :class="{ backgroundHighlight: activeBox == 9 || activeBox == 3 }" />
+                <Tic ticId="3" />
               </div>
               <div class="col-4 ubhiliti">
-                <Tic ticId="4" :class="{ backgroundHighlight: activeBox == 9 || activeBox == 4 }" />
+                <Tic ticId="4" />
               </div>
               <div class="col-4">
-                <Tic ticId="5" :class="{ backgroundHighlight: activeBox == 9 || activeBox == 5 }" />
+                <Tic ticId="5" />
               </div>
             </div>
             <div class="row">
               <div class="col-4 ubhiliti">
-                <Tic ticId="6" :class="{ backgroundHighlight: activeBox == 9 || activeBox == 6 }" />
+                <Tic ticId="6" />
               </div>
               <div class="col-4 ubhiliti">
-                <Tic ticId="7" :class="{ backgroundHighlight: activeBox == 9 || activeBox == 7 }" />
+                <Tic ticId="7" />
               </div>
               <div class="col-4">
-                <Tic ticId="8" :class="{ backgroundHighlight: activeBox == 9 || activeBox == 8 }" />
+                <Tic ticId="8" />
               </div>
             </div>
           </table>
@@ -87,9 +87,5 @@ table tr td {
 
 .ubhiliti {
   border-right: 5px solid #acb1c0;
-}
-
-.backgroundHighlight {
-  background: #656060;
 }
 </style>
