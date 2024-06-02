@@ -17,37 +17,37 @@
             <div class="mb-2">
               {{ currentUser }} Turn
             </div>
-            <div class="row adiliti">
-              <div class="col-4 ubhiliti">
-                <Tic ticId="0" />
+            <div class="row horizontal-line ">
+              <div class="col-4 vertical-line">
+                <Tic :ticId="0" />
               </div>
-              <div class="col-4 ubhiliti">
-                <Tic ticId="1" />
+              <div class="col-4 vertical-line">
+                <Tic :ticId="1" />
               </div>
               <div class="col-4">
-                <Tic ticId="2" />
+                <Tic :ticId="2" />
               </div>
             </div>
-            <div class="row adiliti">
-              <div class="col-4 ubhiliti">
-                <Tic ticId="3" />
+            <div class="row horizontal-line ">
+              <div class="col-4 vertical-line">
+                <Tic :ticId="3" />
               </div>
-              <div class="col-4 ubhiliti">
-                <Tic ticId="4" />
+              <div class="col-4 vertical-line">
+                <Tic :ticId="4" />
               </div>
               <div class="col-4">
-                <Tic ticId="5" />
+                <Tic :ticId="5" />
               </div>
             </div>
             <div class="row">
-              <div class="col-4 ubhiliti">
-                <Tic ticId="6" />
+              <div class="col-4 vertical-line">
+                <Tic :ticId="6" />
               </div>
-              <div class="col-4 ubhiliti">
-                <Tic ticId="7" />
+              <div class="col-4 vertical-line">
+                <Tic :ticId="7" />
               </div>
               <div class="col-4">
-                <Tic ticId="8" />
+                <Tic :ticId="8" />
               </div>
             </div>
           </table>
@@ -80,12 +80,12 @@ table tr td {
   visibility: hidden;
 }
 
-.adiliti {
+.horizontal-line {
   border-bottom: 5px solid #7e818b;
   ;
 }
 
-.ubhiliti {
+.vertical-line {
   border-right: 5px solid #acb1c0;
 }
 </style>

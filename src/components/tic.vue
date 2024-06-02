@@ -1,5 +1,5 @@
 <template>
-  <div class="row">
+  <div class="row" :class="{ backgroundHighlight: (activeBox == 9 || activeBox == props.ticId) && !win}">
     <div v-for="(item, index) in arr" :key="index" class="col-4 cell ticContainer text-center" @click="addturn(index)">
       <div>{{ item }}</div>
     </div>
@@ -18,8 +18,7 @@ const arr = ref(Array(9).fill(""));
 const win = ref(false)
 
 const props = defineProps({
-  ticId: String,
-  tickedbox: Number
+  ticId: Number,
 })
 
 function addturn(i) {
@@ -53,7 +52,7 @@ function addturn(i) {
       setActiveBox(9)
       return
     }
-    setActiveBox(9)
+    setActiveBox(i)
   }
 }
 
@@ -69,5 +68,8 @@ function resetArr() {
   height: 70px;
   border: 1px solid white;
 }
+.backgroundHighlight {
+  background: #656060;
+}
+
 </style>
-@/composable/gameStatus.js
