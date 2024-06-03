@@ -72,8 +72,4 @@ function resetArr() {
 .backgroundHighlight {
   background: rgb(4, 39, 67);
 }
-
-.curser:hover {
-  cursor: pointer;
-}
 </style>
