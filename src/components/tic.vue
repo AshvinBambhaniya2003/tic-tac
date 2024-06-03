@@ -1,5 +1,5 @@
 <template>
-  <div class="row" :class="{ backgroundHighlight: (activeBox == 9 || activeBox == props.ticId) && !win}">
+  <div class="row" :class="{ backgroundHighlight: (activeBox == 9 || activeBox == props.ticId) && !win }">
     <div v-for="(item, index) in arr" :key="index" class="col-4 cell ticContainer text-center" @click="addturn(index)">
       <div>{{ item }}</div>
     </div>
@@ -68,8 +68,8 @@ function resetArr() {
   height: 70px;
   border: 1px solid white;
 }
-.backgroundHighlight {
-  background: #656060;
-}
 
+.backgroundHighlight {
+  background: rgb(4, 39, 67);
+}
 </style>

@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <div>current activeBox: {{ activeBox }}</div>
     <div class="row d-flex align-items-center container">
       <div class="col-4">
         <div class="mt-5">
@@ -17,7 +16,7 @@
             <div class="mb-2">
               {{ currentUser }} Turn
             </div>
-            <div class="row horizontal-line ">
+            <div class="row horizontal-line background-blue">
               <div class="col-4 vertical-line">
                 <Tic :ticId="0" />
               </div>
@@ -28,7 +27,7 @@
                 <Tic :ticId="2" />
               </div>
             </div>
-            <div class="row horizontal-line ">
+            <div class="row horizontal-line background-blue">
               <div class="col-4 vertical-line">
                 <Tic :ticId="3" />
               </div>
@@ -39,7 +38,7 @@
                 <Tic :ticId="5" />
               </div>
             </div>
-            <div class="row">
+            <div class="row background-blue">
               <div class="col-4 vertical-line">
                 <Tic :ticId="6" />
               </div>
@@ -61,7 +60,6 @@
 
 import Tic from "./components/tic.vue";
 import { currentUser } from './store/currentUser.js'
-import { activeBox } from "./store/activeBox";
 import { mainArr } from "./store/mainArr";
 
 </script>
@@ -76,10 +74,6 @@ table tr td {
   border: 10px solid cyan;
 }
 
-.visibilityHidden {
-  visibility: hidden;
-}
-
 .horizontal-line {
   border-bottom: 5px solid #7e818b;
   ;
@@ -87,5 +81,9 @@ table tr td {
 
 .vertical-line {
   border-right: 5px solid #acb1c0;
+}
+
+.background-blue{
+  background: #656060;
 }
 </style>
